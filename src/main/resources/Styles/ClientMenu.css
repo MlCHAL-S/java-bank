@@ -1,19 +1,20 @@
 .main_menu_container {
     -fx-background-color: #EEEEEE;
     -fx-alignment: center;
+    -fx-padding: 0 10 0 10;
 }
 
 /* Title/logo section */
 
 .left_container {
-    -fx-color: #FFFFFF;
+    -fx-background-color: #FFFFFF;
     -fx-background-radius: 10;
     -fx-effect: dropshadow(two-pass-box, #AAAAAA, 5, 0, 0, 4);
 }
 
 .title_container {
-    -fx-background-color: #FFFFFF, transparent;
-    -fx-background-insets: 20 20 0 0, 0;
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 20 20 0 0;
     -fx-alignment: top_center;
     -fx-padding: 10;
 }
@@ -39,11 +40,11 @@
     -fx-background-color: #FFFFFF;
     -fx-text-fill: #132A13;
     -fx-font-size: 1.1em;
-    -fx-alignment: center;
+    -fx-alignment: center-left;
     -fx-effect: dropshadow(three-pass-box, #DDDDDD, 5, 0, 0, 6);
 }
 
-.menu_container Button::hover {
+.menu_container Button:hover {
     -fx-cursor: hand;
 }
 
@@ -71,7 +72,7 @@
     -fx-background-radius: 10;
     -fx-alignment: center;
     -fx-spacing: 10;
-    -fx-padding: 10, 0, 10, 0;
+    -fx-padding: 10 0 10 0;
 }
 
 .report_container Text {
@@ -90,8 +91,8 @@
     -fx-text-fill: #FFFFFF;
 }
 
-.report_container Button::hover {
-    -fx-current: hand;
+.report_container Button:hover {
+    -fx-cursor: hand;
 }
 
 .report_container Button FontAwesomeIconView {

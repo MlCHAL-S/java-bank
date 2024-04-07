@@ -65,7 +65,7 @@
     -fx-font-size: 1.2em;
 }
 
-.login_form_container Button::hover {
+.login_form_container Button:hover {
     -fx-cursor: hand;
 }
 
