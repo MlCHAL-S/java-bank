@@ -2,6 +2,7 @@ package org.example.Controllers.Client;
 
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import org.example.Models.Model;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -15,5 +16,6 @@ public class ClientController implements Initializable {
     public Button report_btn;
 
     @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {}
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+    }
 }
