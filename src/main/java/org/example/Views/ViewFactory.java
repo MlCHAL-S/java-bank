@@ -1,5 +1,7 @@
 package org.example.Views;
 
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
@@ -8,9 +10,22 @@ import org.example.Controllers.Client.ClientController;
 
 public class ViewFactory {
     // Client view
+    private final StringProperty clientSelectedMenuItem;
     private AnchorPane dashboardView;
+    private AnchorPane transitionsView;
 
-    public ViewFactory() {   }
+    private AnchorPane accountsView;
+
+    public ViewFactory(){
+        this.clientSelectedMenuItem = new SimpleStringProperty("");
+    }
+
+    /*
+    * Client Views Section
+    * */
+    public StringProperty getClientSelectedMenuItem(){
+        return clientSelectedMenuItem;
+    }
 
     public AnchorPane getDashBoardView() {
         if (dashboardView == null) {
@@ -22,6 +37,28 @@ public class ViewFactory {
         }
 
         return dashboardView;
+    }
+
+    public AnchorPane getTransitionsView() {
+        if (transitionsView == null) {
+            try {
+                transitionsView = new FXMLLoader(getClass().getResource("/Fxml/Client/Transactions.fxml")).load();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return transitionsView;
+    }
+
+    public AnchorPane getAccountsView() {
+        if (accountsView == null) {
+            try {
+                accountsView = new FXMLLoader(getClass().getResource("/Fxml/Client/Accounts.fxml")).load();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return accountsView;
     }
 
     public void showLoginWindow() {
@@ -49,5 +86,9 @@ public class ViewFactory {
         stage.setScene(scene);
         stage.setTitle("Bank");
         stage.show();
+    }
+
+    public void closeStage(Stage stage) {
+        stage.close();
     }
 }

@@ -11,7 +11,7 @@
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0"
       prefWidth="180.0" styleClass="main_menu_container" stylesheets="@../../Styles/ClientMenu.css"
-      xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Controllers.Client.ClientController">
+      xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Controllers.Client.ClientMenuController">
     <AnchorPane prefHeight="730.0" prefWidth="160.0" styleClass="left_container">
         <VBox prefHeight="80.0" prefWidth="160.0" styleClass="title_container" AnchorPane.leftAnchor="0.0"
               AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -30,7 +30,7 @@
                     <FontAwesomeIconView glyphName="HANDSHAKE_ALT" size="20"/>
                 </graphic>
             </Button>
-            <Button fx:id="account_btn" mnemonicParsing="false" text="Accounts">
+            <Button fx:id="accounts_btn" mnemonicParsing="false" text="Accounts">
                 <graphic>
                     <FontAwesomeIconView glyphName="ADDRESS_BOOK_ALT" size="20"/>
                 </graphic>
