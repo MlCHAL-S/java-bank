@@ -16,7 +16,5 @@ public class DepositController implements Initializable {
     public Button deposit_btn;
 
     @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-
-    }
+    public void initialize(URL url, ResourceBundle resourceBundle) {}
 }

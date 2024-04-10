@@ -10,7 +10,5 @@ public class ClientsController implements Initializable {
     public ListView clients_listview;
 
     @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-
-    }
+    public void initialize(URL url, ResourceBundle resourceBundle) {}
 }

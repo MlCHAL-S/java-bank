@@ -54,7 +54,6 @@ public class ViewFactory {
                 e.printStackTrace();
             }
         }
-
         return dashboardView;
     }
 

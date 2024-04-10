@@ -10,7 +10,6 @@ public class Model {
     private static Model model;
     private final ViewFactory viewFactory;
     private final DatabaseDriver databaseDriver;
-
     private AccountType loginAccountType = AccountType.CLIENT;
 
     // Client Data Section
@@ -38,11 +37,9 @@ public class Model {
         return viewFactory;
     }
 
-    public DatabaseDriver getDatabaseDriver() {return databaseDriver;}
+    public DatabaseDriver getDatabaseDriver() { return databaseDriver; }
 
-    public AccountType getLoginAccountType() {
-        return loginAccountType;
-    }
+    public AccountType getLoginAccountType() { return loginAccountType; }
 
     public void setLoginAccountType(AccountType loginAccountType) {
         this.loginAccountType = loginAccountType;
@@ -52,7 +49,7 @@ public class Model {
     ///////////////////////////////////    CLIENT SECTION    //////////////////////////////////
     ///////////////////////////////////////////////////////////////////////////////////////////
     public boolean getClientLoginSuccessFlag() { return this.clientLoginSuccessFlag; }
-    public void setClientLoginSuccessFlag(boolean flag) {this.clientLoginSuccessFlag = flag;}
+    public void setClientLoginSuccessFlag(boolean flag) { this.clientLoginSuccessFlag = flag; }
 
     public Client getClient() {
         return client;

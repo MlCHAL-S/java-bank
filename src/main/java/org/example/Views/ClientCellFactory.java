@@ -9,6 +9,7 @@ public class ClientCellFactory extends ListCell<Client> {
     @Override
     protected void updateItem(Client client, boolean empty){
         super.updateItem(client, empty);
+
         if (empty) {
             setText(null);
             setGraphic(null);

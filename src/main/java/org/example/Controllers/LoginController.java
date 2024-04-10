@@ -46,7 +46,6 @@ public class LoginController implements Initializable {
             }
         } else {
             Model.getInstance().getViewFactory().showAdminWindow();
-
         }
     }
 }

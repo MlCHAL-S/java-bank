@@ -23,7 +23,5 @@ public class AccountsController implements Initializable {
     public Button trans_to_ch_btn;
 
     @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-
-    }
+    public void initialize(URL url, ResourceBundle resourceBundle) {}
 }

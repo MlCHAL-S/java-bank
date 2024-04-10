@@ -23,7 +23,5 @@ public class CreateClientController implements Initializable {
     public Label error_lbl;
 
     @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-
-    }
+    public void initialize(URL url, ResourceBundle resourceBundle) {}
 }

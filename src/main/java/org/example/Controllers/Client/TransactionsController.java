@@ -11,7 +11,5 @@ public class TransactionsController implements Initializable {
     public ListView transactions_listview;
 
     @Override
-    public void initialize(URL url, ResourceBundle resourceBundle){
-
-    }
+    public void initialize(URL url, ResourceBundle resourceBundle) {}
 }

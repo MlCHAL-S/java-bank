@@ -9,6 +9,7 @@ public class TransactionCellFactory extends ListCell<Transaction> {
     @Override
     protected void updateItem(Transaction transaction, boolean empty) {
         super.updateItem(transaction, empty);
+
         if (empty) {
             setText(null);
             setGraphic(null);

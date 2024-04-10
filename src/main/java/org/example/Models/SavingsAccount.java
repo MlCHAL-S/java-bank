@@ -5,7 +5,7 @@ import javafx.beans.property.SimpleDoubleProperty;
 
 
 public class SavingsAccount extends Account{
-    // the withdraw limit from the savings
+    // the withdrawal limit from the savings
     private final DoubleProperty withdrawLimit;
 
     public SavingsAccount(String owner, String accountNumber, double balance, double withdrawLimit) {
