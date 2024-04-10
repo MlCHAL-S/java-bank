@@ -1,7 +1,7 @@
 package org.example.Views;
 
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
+import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.SimpleObjectProperty;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
@@ -10,25 +10,38 @@ import org.example.Controllers.Admin.AdminController;
 import org.example.Controllers.Client.ClientController;
 
 public class ViewFactory {
-    // Client view
-    private final StringProperty clientSelectedMenuItem;
+    private AccountType loginAccountType;
+    // Client views
+    private final ObjectProperty<ClientMenuOptions> clientSelectedMenuItem;
     private AnchorPane dashboardView;
     private AnchorPane transitionsView;
     private AnchorPane accountsView;
+    private AnchorPane clientsView;
 
     // Admin Views
-    private final StringProperty adminSelectedMenuItem;
+    private final ObjectProperty<AdminMenuOptions> adminSelectedMenuItem;
     private AnchorPane createClientView;
+    private AnchorPane depositView;
+
 
     public ViewFactory(){
-        this.clientSelectedMenuItem = new SimpleStringProperty("");
-        this.adminSelectedMenuItem = new SimpleStringProperty("");
+        this.loginAccountType = AccountType.CLIENT;
+        this.clientSelectedMenuItem = new SimpleObjectProperty<>();
+        this.adminSelectedMenuItem = new SimpleObjectProperty<>();
     }
 
-    /*
-    * Client Views Section
-    * */
-    public StringProperty getClientSelectedMenuItem(){
+    public AccountType getLoginAccountType() {
+        return loginAccountType;
+    }
+
+    public void setLoginAccountType(AccountType loginAccountType) {
+        this.loginAccountType = loginAccountType;
+    }
+
+    ///////////////////////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////    CLIENT SECTION    ///////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////////////////////
+    public ObjectProperty<ClientMenuOptions> getClientSelectedMenuItem(){
         return clientSelectedMenuItem;
     }
 
@@ -75,10 +88,10 @@ public class ViewFactory {
         createStage(loader);
     }
 
-    /*
-    * Admin Views Section
-    * */
-    public StringProperty getAdminSelectedMenuItem(){
+    ///////////////////////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////    ADMIN SECTION    ///////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////////////////////
+    public ObjectProperty<AdminMenuOptions> getAdminSelectedMenuItem(){
         return adminSelectedMenuItem;
     }
 
@@ -91,6 +104,28 @@ public class ViewFactory {
             }
         }
         return createClientView;
+    }
+
+    public AnchorPane getClientsView() {
+        if (clientsView == null) {
+            try {
+                clientsView = new FXMLLoader(getClass().getResource("/Fxml/Admin/Clients.fxml")).load();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return clientsView;
+    }
+
+    public AnchorPane getDepositView() {
+        if (depositView == null) {
+            try {
+                depositView = new FXMLLoader(getClass().getResource("/Fxml/Admin/Deposit.fxml")).load();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return depositView;
     }
 
     public void showAdminWindow() {
