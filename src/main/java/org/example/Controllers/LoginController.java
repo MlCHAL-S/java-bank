@@ -35,6 +35,7 @@ public class LoginController implements Initializable {
         if (Model.getInstance().getViewFactory().getLoginAccountType() == AccountType.CLIENT) {
             // Evaluate client login credentials
             Model.getInstance().evaluateClientCred(payee_address_fld.getText(), password_fld.getText());
+            //Model.getInstance().evaluateClientCred("@cClark3", "123456");
             if (Model.getInstance().getClientLoginSuccessFlag()) {
                 Model.getInstance().getViewFactory().showClientWindow();
                 // Close the login stage

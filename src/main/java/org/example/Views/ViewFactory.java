@@ -15,7 +15,7 @@ public class ViewFactory {
     // Client views
     private final ObjectProperty<ClientMenuOptions> clientSelectedMenuItem;
     private AnchorPane dashboardView;
-    private AnchorPane transitionsView;
+    private AnchorPane transactionsView;
     private AnchorPane accountsView;
     private AnchorPane clientsView;
 
@@ -57,15 +57,15 @@ public class ViewFactory {
         return dashboardView;
     }
 
-    public AnchorPane getTransitionsView() {
-        if (transitionsView == null) {
+    public AnchorPane getTransactionsView() {
+        if (transactionsView == null) {
             try {
-                transitionsView = new FXMLLoader(getClass().getResource("/Fxml/Client/Transactions.fxml")).load();
+                transactionsView = new FXMLLoader(getClass().getResource("/Fxml/Client/Transactions.fxml")).load();
             } catch (Exception e) {
                 e.printStackTrace();
             }
         }
-        return transitionsView;
+        return transactionsView;
     }
 
     public AnchorPane getAccountsView() {

@@ -56,8 +56,8 @@ public class Model {
     }
 
     public void evaluateClientCred(String pAddress, String password) {
-        CheckingAccount checkingAccount;
-        SavingsAccount savingsAccount;
+        CheckingAccount checkingAccount = new CheckingAccount("", "", 1, 1);
+        SavingsAccount savingsAccount = new SavingsAccount("", "", 1, 1);
 
         ResultSet resultSet = databaseDriver.getClientData(pAddress, password);
 
@@ -69,8 +69,25 @@ public class Model {
                 String[] dateParts = resultSet.getString("Date").split("-");
                 LocalDate date =  LocalDate.of(Integer.parseInt(dateParts[0]), Integer.parseInt(dateParts[1]), Integer.parseInt(dateParts[2]));
                 this.client.dateProperty().set(date);
+
+                resultSet = databaseDriver.getChcekingAccountData(this.client.pAddressProperty().getValue());
+                checkingAccount.balanceProperty().set(resultSet.getDouble("Balance"));
+                checkingAccount.transactionLimitProperty().set(resultSet.getDouble("TransactionLimit"));
+                checkingAccount.accountNumberProperty().set(resultSet.getString("AccountNumber"));
+                checkingAccount.ownerProperty().set(resultSet.getString("Owner"));
+                this.client.cAccountProperty().set(checkingAccount);
+                System.out.println(this.client.cAccountProperty());
+
+                resultSet = databaseDriver.getSavingsAccountData(this.client.pAddressProperty().getValue());
+                savingsAccount.balanceProperty().set(resultSet.getDouble("Balance"));
+                savingsAccount.withdrawLimitProperty().set(resultSet.getDouble("WithdrawalLimit"));
+                savingsAccount.accountNumberProperty().set(resultSet.getString("AccountNumber"));
+                savingsAccount.ownerProperty().set(resultSet.getString("Owner"));
+                this.client.sAccountProperty().set(savingsAccount);
+
                 this.clientLoginSuccessFlag = true;
             }
+
         } catch (Exception e) {
             e.printStackTrace();
         }
